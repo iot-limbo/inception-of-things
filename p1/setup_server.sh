@@ -1,12 +1,8 @@
 #!/bin/bash
 
-# curl -sfL https://get.k3s.io
+# Set alias for kubectl
+# TODO: find way not to use sudo
+echo "alias k='sudo k3s kubectl'" >> /home/vagrant/.bashrc
 
-
-# sudo apt-get update
-# sudo apt-get install -y apt-transport-https ca-certificates curl
-# sudo mkdir -m 755 /etc/apt/keyrings
-# curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
-# echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
-# sudo apt-get update
-# sudo apt-get install -y kubectl
+# Install k3s
+curl -sfL https://get.k3s.io | sh -

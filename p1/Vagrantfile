@@ -40,5 +40,6 @@ Vagrant.configure("2") do |config|
     wrk.vm.provider PROVIDER do |vb|
       vb.name = WORKER_NAME
     end
+    wrk.vm.provision :shell, path: "setup_agent.sh"
   end
 end

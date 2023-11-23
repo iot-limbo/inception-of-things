@@ -7,3 +7,6 @@ curl -sfL https://get.k3s.io |  sh -s - \
     --node-ip 192.168.56.111 \
     --token-file /vagrant/server-node-token \
     --flannel-iface eth1 \
+
+# delete token file
+rm /vagrant/server-node-token

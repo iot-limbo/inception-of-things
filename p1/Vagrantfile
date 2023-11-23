@@ -9,10 +9,12 @@ PROVIDER="virtualbox"
 CPU = 1
 MEM = 512
 
+CONTROLLER_MACHINE_NAME="jaemjung"
 CONTROLLER_NAME="jaemjungS"
 CONTROLLER_IP="192.168.56.110"
 
-WORKER_NAME="jaemjungSW"
+WORKER_MACHINE_NAME="keokim"
+WORKER_NAME="keokimSW"
 WORKER_IP="192.168.56.111"
 
 Vagrant.configure("2") do |config|
@@ -29,7 +31,7 @@ Vagrant.configure("2") do |config|
     ctl.vm.hostname = CONTROLLER_NAME
     ctl.vm.network "private_network", ip: CONTROLLER_IP
     ctl.vm.provider PROVIDER do |vb|
-      vb.name = CONTROLLER_NAME
+      vb.name = CONTROLLER_MACHINE_NAME
     end
     ctl.vm.provision :shell, path: "setup_server.sh"
   end
@@ -38,7 +40,7 @@ Vagrant.configure("2") do |config|
     wrk.vm.hostname = WORKER_NAME
     wrk.vm.network "private_network", ip: WORKER_IP
     wrk.vm.provider PROVIDER do |vb|
-      vb.name = WORKER_NAME
+      vb.name = WORKER_MACHINE_NAME
     end
     wrk.vm.provision :shell, path: "setup_agent.sh"
   end

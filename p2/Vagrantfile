@@ -1,0 +1,34 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+BOX="bento/ubuntu-16.04"
+BOX_URL="https://vagrantcloud.com/bento/boxes/ubuntu-16.04/versions/202212.11.0/providers/virtualbox/unknown/vagrant.box"
+
+PROVIDER="virtualbox"
+
+CPU = 1
+MEM = 2048
+
+CONTROLLER_MACHINE_NAME="jaemjungS"
+CONTROLLER_NAME="jaemjungS"
+CONTROLLER_IP="192.168.56.110"
+
+Vagrant.configure("2") do |config|
+
+  config.vm.box = BOX
+  config.vm.box_url = BOX_URL
+
+  config.vm.provider PROVIDER do |vb|
+    vb.memory = MEM
+    vb.cpus = CPU
+  end
+
+  config.vm.define CONTROLLER_NAME do |ctl|
+    ctl.vm.hostname = CONTROLLER_NAME
+    ctl.vm.network "private_network", ip: CONTROLLER_IP
+    ctl.vm.provider PROVIDER do |vb|
+      vb.name = CONTROLLER_MACHINE_NAME
+    end
+    ctl.vm.provision :shell, path: "setup_server.sh"
+  end
+end

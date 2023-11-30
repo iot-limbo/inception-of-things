@@ -7,7 +7,7 @@ BOX_URL="https://vagrantcloud.com/bento/boxes/ubuntu-16.04/versions/202212.11.0/
 PROVIDER="virtualbox"
 
 CPU = 1
-MEM = 2048
+MEM = 4096
 
 CONTROLLER_MACHINE_NAME="jaemjungS"
 CONTROLLER_NAME="jaemjungS"

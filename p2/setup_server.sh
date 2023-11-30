@@ -9,3 +9,4 @@ curl -sfL https://get.k3s.io | sh -s - \
 
 # Set alias for kubectl
 echo "alias k='kubectl'" >> /home/vagrant/.bashrc
+

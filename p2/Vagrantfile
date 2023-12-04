@@ -29,6 +29,6 @@ Vagrant.configure("2") do |config|
     ctl.vm.provider PROVIDER do |vb|
       vb.name = CONTROLLER_MACHINE_NAME
     end
-    ctl.vm.provision :shell, path: "setup_server.sh"
+    ctl.vm.provision :shell, path: "/scripts/setup_server.sh"
   end
 end

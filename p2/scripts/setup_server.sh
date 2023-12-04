@@ -7,6 +7,8 @@ curl -sfL https://get.k3s.io | sh -s - \
     --flannel-iface eth1 \
     --write-kubeconfig-mode 644
 
+kubectl apply -f /vagrant/confs
+
 # Set alias for kubectl
 echo "alias k='kubectl'" >> /home/vagrant/.bashrc
 

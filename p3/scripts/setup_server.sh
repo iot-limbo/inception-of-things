@@ -23,6 +23,7 @@ sudo kubectl create namespace dev
 sudo kubectl create namespace argocd
 sudo kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 sudo kubectl wait --for=condition=Ready pods --all -n argocd
-sudo kubectl apply -f ../confs/ingress.yaml -n argocd
+sudo kubectl apply -f ../confs/ingress.yaml -n dev
+sudo kubectl apply -f ../confs/playground.yaml -n dev
 sudo kubectl apply -f ../confs/application.yaml -n argocd
 sudo kubectl wait --for=condition=Ready pods --all -n argocd

@@ -1,8 +1,12 @@
+# Argo CD를 외부에서 접근할 수 있도록 하기 위한 Ingress 리소스를 설정
+# Ingress는 클러스터 외부에서 내부 서비스로의 경로를 관리하는 Kubernetes 리소스
+# 이를 통해 HTTP 또는 HTTPS 연결을 설정할 수 있음
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress
+  name: argocd-ingress
+  namespace: argocd
   labels:
     app: argocd
   annotations:

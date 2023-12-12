@@ -1,13 +1,17 @@
+# ArgoCD를 통해 Git 리포지토리에서 Kubernetes 클러스터로 애플리케이션을 배포
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: argocd-iot-app
+  namespace: argocd
 spec:
   project: development
   source:
-    repoURL: https://github.com/iot-limbo/inception-of-things.git
+    repoURL: https://github.com/iot-limbo/keokim-argocd.git
     targetRevision: HEAD
     path: manifests
+    # ArgoCD는 해당 디렉토리 내의 모든 서브디렉토리에 대해 변경사항을 재귀적으로 가져오려고 시도
+    # 이 설정은 Git 리포지토리가 여러 서브디렉토리를 포함하고 있으며, 모든 서브디렉토리에 대한 변경사항을 한 번에 적용해야 할 때 유용
     directory:
       recurse: true
   destination:
@@ -15,5 +19,7 @@ spec:
     namespace: dev
   syncPolicy:
     automated:
-      prune: false
+      # 러스터에서 애플리케이션과 관련이 없는 리소스를 자동으로 제거하려고 시도
+      prune: true
+      # 동기화 중에 문제가 발생하면 ArgoCD가 시스템을 자동으로 복구하려고 시도
       selfHeal: true

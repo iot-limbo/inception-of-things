@@ -32,13 +32,14 @@ sleep 5
 sudo kubectl create namespace dev
 sudo kubectl create namespace argocd
 sleep 3
-sudo kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+sudo kubectl apply -f ../confs/install.yaml -n argocd
+# sudo kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 sleep 3
 sudo kubectl wait --for=condition=Ready pods --all -n argocd
 sleep 3
 sudo kubectl apply -f ../confs/ingress.yaml -n argocd
 sleep 3
-sudo kubectl apply -f ../confs/project.yaml -n dev
+sudo kubectl apply -f ../confs/project.yaml -n argocd
 sleep 3
 sudo kubectl apply -f ../confs/application.yaml -n argocd
 sleep 5

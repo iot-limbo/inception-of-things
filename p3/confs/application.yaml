@@ -7,7 +7,7 @@ metadata:
 spec:
   project: development
   source:
-    repoURL: https://github.com/keonwoo98/keokim-argocd.git
+    repoURL: https://github.com/iot-limbo/keokim-argocd.git
     targetRevision: HEAD
     path: manifests
     # ArgoCD는 해당 디렉토리 내의 모든 서브디렉토리에 대해 변경사항을 재귀적으로 가져오려고 시도

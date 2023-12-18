@@ -6,7 +6,7 @@ metadata:
     app: iot-argocd
 spec:
   sourceRepos:
-    - "https://github.com/keonwoo98/*"
+    - "https://github.com/iot-limbo/*"
   destinations:
     - namespace: dev
       server: https://kubernetes.default.svc

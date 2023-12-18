@@ -33,4 +33,3 @@ spec:
       port: 8888
       nodePort: 30888
       targetPort: 8888
-  type: LoadBalancer

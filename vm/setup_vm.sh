@@ -19,8 +19,3 @@ sudo apt-get install -y git
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt-get install -y ./google-chrome-stable_current_amd64.deb
 sudo rm ./google-chrome-stable_current_amd64.deb
-
-#install vagrant
-
-
-sudo usermod -a -G sudo vagrant

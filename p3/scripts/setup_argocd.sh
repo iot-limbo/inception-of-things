@@ -28,3 +28,4 @@ echo "ArgoCD is ready at http://localhost:8080"
 echo "Username: admin"
 echo "Password: $(sudo kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d)"
 
+echo "Service is ready at http://localhost:8888"

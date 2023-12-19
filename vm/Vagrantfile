@@ -8,9 +8,9 @@ PROVIDER="virtualbox"
 CPU = 2
 MEM = 4096
 
-CONTROLLER_MACHINE_NAME="inception_of_things"
-CONTROLLER_NAME="inception_of_things"
-CONTROLLER_IP="192.168.42.110"
+CONTROLLER_MACHINE_NAME="inceptionOfThings"
+CONTROLLER_NAME="inceptionOfThings"
+CONTROLLER_IP="192.168.56.112"
 
 Vagrant.configure("2") do |config|
 
@@ -28,6 +28,6 @@ Vagrant.configure("2") do |config|
     ctl.vm.provider PROVIDER do |vb|
       vb.name = CONTROLLER_MACHINE_NAME
     end
-    ctl.vm.provision :shell, path: "scripts/install_gui.sh"
+    ctl.vm.provision :shell, path: "./setup_vm.sh"
   end
 end

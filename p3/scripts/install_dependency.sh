@@ -16,5 +16,5 @@ sudo apt-get install -y kubectl
 # Install k3d
 curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash
 
-# Create k3d cluster
-sudo k3d cluster create argocd
+# set alias
+echo "alias k='sudo kubectl'" >> /home/vagrant/.bashrc

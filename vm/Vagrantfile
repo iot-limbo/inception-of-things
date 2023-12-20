@@ -1,12 +1,12 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-BOX="bento/ubuntu-20.04"
+BOX="bento/ubuntu-22.04"
 
 PROVIDER="virtualbox"
 
 CPU = 2
-MEM = 4096
+MEM = 8192
 
 CONTROLLER_MACHINE_NAME="inceptionOfThings"
 CONTROLLER_NAME="inceptionOfThings"

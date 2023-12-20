@@ -17,3 +17,4 @@ sudo apt-get install -y --no-install-recommends ubuntu-desktop
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt-get install -y ./google-chrome-stable_current_amd64.deb
 sudo rm ./google-chrome-stable_current_amd64.deb
+

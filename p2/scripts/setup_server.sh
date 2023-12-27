@@ -7,6 +7,9 @@ curl -sfL https://get.k3s.io | sh -s - \
     --flannel-iface eth1 \
     --write-kubeconfig-mode 644
 
+# Install net-tools to use ifconfig
+sudo apt install net-tools
+
 kubectl apply -f /vagrant/confs
 
 # Set alias for kubectl

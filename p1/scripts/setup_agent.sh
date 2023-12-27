@@ -8,5 +8,8 @@ curl -sfL https://get.k3s.io |  sh -s - \
     --token-file /vagrant/server-node-token \
     --flannel-iface eth1 \
 
+# Install net-tools to use ifconfig
+sudo apt install net-tools
+
 # delete token file
 rm /vagrant/server-node-token

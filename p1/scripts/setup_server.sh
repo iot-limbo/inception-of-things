@@ -7,6 +7,9 @@ curl -sfL https://get.k3s.io | sh -s - \
     --flannel-iface eth1 \
     --write-kubeconfig-mode 644
 
+# Install net-tools to use ifconfig
+sudo apt install net-tools
+
 # Copy server node token to synced folder
 cp /var/lib/rancher/k3s/server/node-token /vagrant/server-node-token
 

@@ -11,7 +11,7 @@ sleep 3
 sudo kubectl apply -f ../confs/argocd_install.yaml -n argocd
 sleep 3
 
-sudo kubectl wait --for=condition=Ready pods --all -n argocd
+sudo kubectl wait --for=condition=Ready pods --all -n argocd --timeout=5m
 
 # Apply ingress
 sudo kubectl apply -f ../confs/argocd_ingress.yaml -n argocd

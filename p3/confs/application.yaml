@@ -20,6 +20,6 @@ spec:
   syncPolicy:
     automated:
       # 러스터에서 애플리케이션과 관련이 없는 리소스를 자동으로 제거하려고 시도
-      prune: false
+      prune: true
       # 동기화 중에 문제가 발생하면 ArgoCD가 시스템을 자동으로 복구하려고 시도
       selfHeal: true

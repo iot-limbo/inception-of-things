@@ -5,7 +5,7 @@ BOX="bento/ubuntu-22.04"
 
 PROVIDER="virtualbox"
 
-CPU = 4
+CPU = 8
 MEM = 8192
 
 CONTROLLER_MACHINE_NAME="inceptionOfThings"

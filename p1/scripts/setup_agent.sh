@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Install net-tools
+sudo apt-get update
+sudo apt-get install -y net-tools
+
 # Install k3s
 curl -sfL https://get.k3s.io |  sh -s - \
     agent \
